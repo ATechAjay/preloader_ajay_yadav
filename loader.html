@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preloader</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+      }
+      html {
+        font-size: 62.5%;
+      }
+
+      /* STEP 1 in CSS */
+
+      /* First of all we have to style parent div. */
+
+      /* Give height and width 100vh, 100vw respectively. */
+
+      /* Then align center this div.*/
+
+
+
+      .parent {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+
+
+      /* STEP 2 in CSS */
+
+      /* Set width and height as you want. (In this eg we add 20rem and root font size is 62.5%). */
+
+      /* Now we have add position for center align. */
+
+
+
+
+      .child {
+        position: relative;
+        width: 20rem;
+        height: 20rem;
+      }
+
+
+
+      /* STEP 3 in CSS */
+
+      /* Now we have to add style text with center. */
+
+      /* Text item is absolute to the parent element (child class).*/
+
+      /* for centre we have to add positions absolute, top, left is 50% and trasform traslate -50% for x and -50% for y axis. */
+
+
+
+      h1 {
+        color: #1e90ff;
+        letter-spacing: 0.5px;
+        text-align: center;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+
+
+
+      /* STEP 4 in CSS */
+
+      /* We have to rotate right or left border and give border radius is to 50% for circle shape.*/
+
+      /* And its also absolute to the parent element that is .child (class). */
+
+      /* And we have to rotate this elements using animation property. */
+
+
+
+      .rotate {
+        position: absolute;
+        width: 20rem;
+        height: 20rem;
+        border-right: 0.5rem solid #1e90ff;
+        border-radius: 50%;
+        animation: rotation 2.5s linear infinite;
+      }
+
+
+
+
+      /* STEP 5 in CSS */
+
+      /* The keyframes of animation is 0 degree when 0% and 360 deggree when 100% rotation completed. */
+
+
+
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <!-- IN HTML -->
+
+    <!-- (1). First of all we have to add a div like "parent" -->
+
+    <!-- (2). Then we have to add one more div inside the parent div with class name "child"-->
+    <!--  -->
+
+    <!-- (3). And now, add one more div for rotation like a circular form inside child div with "rotate" class name-->
+
+    <!-- (4). Finally we have to a text that is "loading..." -->
+
+
+
+    <div class="parent">
+      <div class="child">
+        <div class="rotate"></div>
+        <h1>loading...</h1>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
